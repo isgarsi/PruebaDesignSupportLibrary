@@ -5,4 +5,5 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_floating_label">FloatingLabelActivity</string>
     <string name="title_activity_fab">FABActivity</string>
+    <string name="but_navigation">Navigation Drawer</string>
 </resources>

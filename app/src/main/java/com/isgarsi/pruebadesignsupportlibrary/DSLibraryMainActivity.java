@@ -10,11 +10,12 @@ import android.widget.Button;
 import android.widget.Toast;
 
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class DSLibraryMainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Button butFloatingLabel;
     private Button butFAB;
     private Button butSnackBar;
+    private Button butNavDrawer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,10 +25,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         butFloatingLabel = (Button) findViewById(R.id.butFloatingLabel);
         butFAB = (Button) findViewById(R.id.butFAB);
         butSnackBar = (Button) findViewById(R.id.butSnackBar);
+        butNavDrawer= (Button) findViewById(R.id.butNavigationDrawer);
 
         butFloatingLabel.setOnClickListener(this);
         butFAB.setOnClickListener(this);
         butSnackBar.setOnClickListener(this);
+        butNavDrawer.setOnClickListener(this);
     }
 
 
@@ -46,6 +49,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.butSnackBar:
                 createSnackBar(v,"Holaaaa");
                 break;
+            case R.id.butNavigationDrawer:
+                intent = new Intent(this,NavigationDrawerActivity.class);
+                break;
         }
 
         if(intent != null){
@@ -60,7 +66,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 .setAction("Mostrar Toast", new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText(MainActivity.this, message, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(DSLibraryMainActivity.this, message, Toast.LENGTH_SHORT).show();
                     }
                 });
 
